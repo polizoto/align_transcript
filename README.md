@@ -17,5 +17,5 @@ Aeneas (https://github.com/readbeyond/aeneas)
 4. HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting)
 5. Adjust the Aeneas command so that the correct audio file type is list. In addition, adjust Aeneas parameters as you see fit (e.g., head/tail audio length)
 
-<Segment_Transcript.sh path_to_text_file>
+Segment_Transcript.sh path_to_text_file
 
