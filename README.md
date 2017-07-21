@@ -7,9 +7,6 @@ NOTE: If you are just starting a captioning workflow for YouTube videos, we reco
 
 * `brew install gnu-sed --with-default-names`
 
-Perl Script from University of Illinois:
-https://cogcomp.cs.illinois.edu/page/tools_view/2
-
 Aeneas (https://github.com/readbeyond/aeneas/blob/master/wiki/INSTALL.md)
 
 ## Usage
