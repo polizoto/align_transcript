@@ -4,6 +4,11 @@
 # This script has been tested to work on MacOS; please contact me for any questions about use on other platforms
 # This script should be run after each sentence has been placed on its own line (use sentenceboundary.pl script)
 # 408-996-6044
+
+# check dependencies 
+command -v aeneas_execute_task >/dev/null 2>&1 || { echo >&2 "anaeas_execute_task not found please install from https://github.com/readbeyond/aeneas/blob/master/wiki/INSTALL.md)"; exit 1; }
+
+command -v rename >/dev/null 2>&1 || { echo >&2 "rename dependency not found. Please install using 'brew install rename'"; exit 1; }
  
 ###### SCRIPT #######
 for f in "$@"
@@ -55,7 +60,7 @@ aeneas_execute_task "$f".mp4 "$f" "task_language=eng|os_task_file_format=srt|is_
 # Rename Files
 rename 's/.txt.srt/.srt/g' *.srt
 rename 's/.txt.srt.html/.html/g' *.html
- rename 's/.txt.mp4/.mp4/g' *.mp4
+rename 's/.txt.mp4/.mp4/g' *.mp4
 # rename 's/.txt.mp3/.mp3/g' *.mp3
 
 done
