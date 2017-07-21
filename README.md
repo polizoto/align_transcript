@@ -1,5 +1,7 @@
 # segment_transcript
-This script segments a plain text file into "caption-ready" chunks. It then aligns the text file with audio, using Aeneas.
+This script segments an edited plain text file into "caption-ready" chunks. It then aligns the text file with audio, using Aeneas.
+
+NOTE: If you are just starting a captioning workflow for YouTube videos, we recommend using the YouTube.sh script to download the auto-Captions from YouTube https://github.com/polizoto/auto_captions_dl . That script will download the auto-captions (a "raw" transcript) which you can then edit before running segment/transcript.
 
 ## Dependencies
 
