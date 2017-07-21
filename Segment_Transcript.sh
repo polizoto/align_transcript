@@ -42,7 +42,7 @@ rm test3.txt
 
 # Run Aeneas on pairs of Audio + Text
 
-aeneas_execute_task "$f".mp4 "$f" "task_language=eng|os_task_file_format=srt|is_text_type=subtitles|is_audio_file_head_length=12.000|is_audio_file_tail_length=6.000|task_adjust_boundary_nonspeech_min=10.000|task_adjust_boundary_nonspeech_string=REMOVE|task_adjust_boundary_algorithm=percent|task_adjust_boundary_percent_value=75|is_text_file_ignore_regex=[*]" "$f".srt --output-html
+aeneas_execute_task "$f".mp4 "$f" "task_language=eng|os_task_file_format=srt|is_text_type=subtitles|is_audio_file_head_length=12.000|is_audio_file_tail_length=6.000|task_adjust_boundary_nonspeech_min=1.000|task_adjust_boundary_nonspeech_string=REMOVE|task_adjust_boundary_algorithm=percent|task_adjust_boundary_percent_value=75|is_text_file_ignore_regex=[*]" "$f".srt --output-html
 # aeneas_execute_task "$f".mp3 "$f" "task_language=fr|os_task_file_format=srt|is_text_type=subtitles|task_adjust_boundary_nonspeech_min=10.000|task_adjust_boundary_nonspeech_string=REMOVE|task_adjust_boundary_algorithm=percent|task_adjust_boundary_percent_value=75|is_text_file_ignore_regex=[*]" "$f".srt --output-html
 
 
