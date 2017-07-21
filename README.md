@@ -2,13 +2,13 @@
 This script segments a plain text file into "caption-ready" chunks. It then aligns the text file with audio, using Aeneas.
 
 ## Dependencies
-Sed
+
+* `brew install gnu-sed --with-default-names`
 
 Perl Script from University of Illinois:
 https://cogcomp.cs.illinois.edu/page/tools_view/2
 
-Aeneas (https://github.com/readbeyond/aeneas)
-- system-wise installation (add path to aeneas in ~bash.profile)
+Aeneas (https://github.com/readbeyond/aeneas/blob/master/wiki/INSTALL.md)
 
 ## Usage
 1. Every sentence must be on the same line in the TXT file (1 single line of text)
@@ -17,5 +17,5 @@ Aeneas (https://github.com/readbeyond/aeneas)
 4. HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting)
 5. Adjust the Aeneas command so that the correct audio file type is listed (Adjust other 'clean-up' commands with different file types as well). In addition, adjust Aeneas parameters as necessary (e.g., head/tail audio length)
 
-Segment_Transcript.sh path_to_text_file
+`./Segment_Transcript.sh path_to_text_file`
 
