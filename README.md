@@ -23,10 +23,10 @@ Preliminary:
 * Every sentence must be on the same line in the TXT file (1 single line of text)
 * Include speaker IDs and non-speech sounds in brackets (they will be ignored for alignment)
 * The TXT file and the AUDIO file must have the same name and be located in the same directory.
+* HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting). This file should be in same directory as scripts. 
+* sentence-boundary.pl is a perl script that places all the sentences in a TXT file on their own lines. This file should be in the same directory as the script.
 1. Open the Terminal
 2. CD to the directory with the scripts.
-- HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting). This file should be in same directory as scripts. 
-- sentence-boundary.pl is a perl script that places all the sentences in a TXT file on their own lines. This file should be in the same directory as the script.
 3. Enter the path to the script and then enter the path to the TXT file:
 
 `./Segment_Only.sh path_to_text_file`
