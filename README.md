@@ -1,5 +1,7 @@
 # segment_transcript
-The Segment_Only script segments an edited plain text file into "caption-ready" chunks. The Segment+Align script segments the TXT file into chunks and aligns it with audio, using Aeneas. The result is an SRT file.
+The Segment_Only script segments an edited plain text file into "caption-ready" chunks. 
+
+The Segment+Align script segments the TXT file into chunks and aligns it with audio, using Aeneas. The result is an SRT file.
 
 NOTE: If you are just starting a captioning workflow for YouTube videos, we recommend using the YouTube.sh script to download the auto-Captions from YouTube https://github.com/polizoto/auto_captions_dl . That script will download the auto-captions (a "raw" transcript) which you can then edit before running segment/transcript.
 
