@@ -7,9 +7,7 @@ NOTE: If you are just starting a captioning workflow for YouTube videos, we reco
 
 ## Dependencies
 
-Perl, rename, fold (should already be installed on a Mac)
-
-Sed
+Perl, Sed, rename, fold (should already be installed on a Mac)
 
 `brew install gnu-sed --with-default-names`
 
