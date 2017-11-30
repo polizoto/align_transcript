@@ -12,9 +12,9 @@ Python 2.7 + (should be already installed on macOS)
 Perl, fold (should be already installed on macOS)
 
 Aeneas: https://github.com/readbeyond/aeneas
-1. To install Aeneas and all its dependencies on macOS X 10.7 and up, we recommend the all-in-one installer provided by Daniel Bair: https://github.com/sillsdev/aeneas-installer/releases. The all in one installer will install Homebrew, a package manager for macOS, which will be used to install other dependences for these scripts.
+1. To install Aeneas and all its dependencies on macOS X, we recommend the all-in-one installer provided by Daniel Bair: https://github.com/sillsdev/aeneas-installer/releases. The all-in-one installer will install Homebrew, a package manager for macOS, which will be used to install other dependences for these scripts.
 
-2. If the first method does not work, we recommend using the steps Daniel Bair has provided at this github repo: https://github.com/danielbair/aeneas-installer_. These steps will also install HomeBrew. Follow these steps (from the ReadMe document):
+2. If the first method does not work, we recommend using the steps Daniel Bair has provided at this github repo: https://github.com/danielbair/aeneas-installer_. These steps will also install Homebrew. Follow these steps (from the ReadMe document):
   - Download the repository and extract the Mac_OSX_Installer folder
   - cd to Mac_OSX_Installer folder
   - run `build_setup.sh`
