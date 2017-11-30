@@ -41,15 +41,23 @@ Preliminary:
 * The TXT file and the AUDIO file must have the same name. They must also be located in the same directory.
 * HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting). This file should be in same directory as scripts. 
 * sentence-boundary.pl is a perl script that places all the sentences in a TXT file on their own lines. This file should be in the same directory as the script.
-1. Open the Terminal
-2. CD to the directory with the scripts.
+
+1. Download or clone segment_transcript repository
+2. Open the terminal (Mac)
+3. CD to the directory with the scripts (Segment_Only.sh, Segment+Align.sh, HONORIFICS, and sentence-boundary.pl must all be in the same directory)
+4. Make the scripts executable (one-time-only step)
+
+`chmod +x path/to/Segment_Only.sh`
+
+`chmod +x path/to/Segment+Align.sh`
+
 3. Enter the path to the script and then enter the path to the TXT file:
 
-`./Segment_Only.sh path_to_text_file`
+`path/to/Segment_Only.sh path/to/file`
 
 OR
 
-`./Segment+Align.sh path_to_text_file`
+`path/to/Segment+Align.sh path/to/text_file`
 
 ## Notes
 - In Segment+Align.sh script, adjust, if necessary, the Aeneas command so that the correct audio file type is listed (Adjust other 'clean-up' commands with different file types as well). In addition, adjust Aeneas parameters as necessary (e.g., head/tail audio length)
