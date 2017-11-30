@@ -7,11 +7,14 @@ NOTE: If you are just starting a captioning workflow for YouTube videos, we reco
 
 ## Dependencies
 
-Python, Perl, fold (should already be installed on a Mac)
+Python 2.7 + (should be already installed on macOS)
 
-Homebrew
+Perl, fold (should be already installed on macOS)
 
-
+Homebrew: https://brew.sh/
+- we recommend installing this package manager for macOS, since it makes installing dependencies easier.
+- paste the following code into a mac Terminal and press Return
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Sed
 
