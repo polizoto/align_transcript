@@ -7,13 +7,28 @@ NOTE: If you are just starting a captioning workflow for YouTube videos, we reco
 
 ## Dependencies
 
-Perl, Sed, rename, fold (should already be installed on a Mac)
+Python, Perl, fold (should already be installed on a Mac)
+
+Homebrew
+
+
+
+Sed
 
 `brew install gnu-sed --with-default-names`
 
-Aeneas (https://github.com/readbeyond/aeneas/blob/master/wiki/INSTALL.md)
+rename
 
-N.B. We recommend the Brew installation method on a Mac: https://github.com/danielbair/homebrew-tap
+`brew install rename`
+
+Aeneas: https://github.com/readbeyond/aeneas
+- To install Aeneas and all its dependencies on macOS X 10.7 and up, we recommend the aeneas-installer method provided by Daniel Bair (https://github.com/danielbair/aeneas-installer_)
+  - Download the repository and extract the Mac_OSX_Installer folder
+  - cd to Mac_OSX_Installer folder
+  - run `build_setup.sh`
+  - run `build_packages.sh`
+
+N.B. You may also be prompted to run `brew install ffmpeg`
 
 ## Usage
 
