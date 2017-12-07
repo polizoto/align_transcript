@@ -22,7 +22,7 @@ tr -d '\r\n' < "$f" > test2.txt
 # Remove extra white spaces
 sed -i 's/[[:space:]]\+/ /g' test2.txt
 
-# Remove Brackets around speaker IDs (student, professor)
+# Remove Brackets around STUDENT and PROFESSOR speaker ids (necessary for proper segmentation; will add back later)
 sed -i 's/\[STUDENT\]/STUDENT/g' test2.txt
 sed -i 's/\[PROFESSOR\]/PROFESSOR/g' test2.txt
 
