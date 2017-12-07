@@ -22,7 +22,7 @@ tr -d '\r\n' < "$f" > test2.txt
 # Remove extra white spaces
 sed -i 's/[[:space:]]\+/ /g' test2.txt
 
-# Remove Brackets around speaker IDs
+# Remove Brackets around speaker IDs (necessary for proper segmentation in next step; will add back later)
 sed -i 's/\[STUDENT\]/STUDENT/g' test2.txt
 sed -i 's/\[PROFESSOR\]/PROFESSOR/g' test2.txt
 
@@ -37,7 +37,7 @@ sed -e 'G' test3.txt > test4.txt
 sed -i 's/STUDENT/\[STUDENT\]/g' test4.txt
 sed -i 's/PROFESSOR/\[PROFESSOR\]/g' test4.txt
 
-# Add period between ] and [ characters (non speech sound ending and speaker id beginning)
+# Add two line breaks between ] and [ characters (non speech sound ending and speaker id beginning)
 sed -i 's/\] \[/\]7\[/g' test4.txt
 perl -00 -ple 's/7\[/\n\n\[/g' test4.txt > test5.txt
 perl -00 -ple 's/ \[/\n\n\[/g' test5.txt > test6.txt
