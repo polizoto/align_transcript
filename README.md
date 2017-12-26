@@ -1,4 +1,4 @@
-# segment_transcript
+# align_transcript
 The Segment_Only script segments an edited plain text file into "caption-ready" chunks. 
 
 The Segment+Align script segments the TXT file into chunks and aligns it with audio, using Aeneas. The result is an SRT file.
