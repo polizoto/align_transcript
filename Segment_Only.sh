@@ -11,7 +11,7 @@ command -v aeneas_execute_task >/dev/null 2>&1 || { echo >&2 "aeneas_execute_tas
 command -v rename >/dev/null 2>&1 || { echo >&2 "rename dependency not found. Please install using 'brew install rename'"; exit 1; }
  
 ###### SCRIPT #######
-for f in "$@"
+for f in ./*.txt
 do
 # Get the full file PATH without the extension
 filepathWithoutExtension="${f%.*}"
@@ -22,7 +22,7 @@ tr -d '\r\n' < "$f" > test2.txt
 # Remove extra white spaces
 sed -i 's/[[:space:]]\+/ /g' test2.txt
 
-# Remove Brackets around speaker IDs (necessary for proper segmentation in next step; will add back later)
+# Remove Brackets around speaker IDs
 sed -i 's/\[STUDENT\]/STUDENT/g' test2.txt
 sed -i 's/\[PROFESSOR\]/PROFESSOR/g' test2.txt
 
@@ -37,7 +37,7 @@ sed -e 'G' test3.txt > test4.txt
 sed -i 's/STUDENT/\[STUDENT\]/g' test4.txt
 sed -i 's/PROFESSOR/\[PROFESSOR\]/g' test4.txt
 
-# Add two line breaks between ] and [ characters (non speech sound ending and speaker id beginning)
+# Add period between ] and [ characters (non speech sound ending and speaker id beginning)
 sed -i 's/\] \[/\]7\[/g' test4.txt
 perl -00 -ple 's/7\[/\n\n\[/g' test4.txt > test5.txt
 perl -00 -ple 's/ \[/\n\n\[/g' test5.txt > test6.txt

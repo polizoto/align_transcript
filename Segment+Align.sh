@@ -11,7 +11,7 @@ command -v aeneas_execute_task >/dev/null 2>&1 || { echo >&2 "aeneas_execute_tas
 command -v rename >/dev/null 2>&1 || { echo >&2 "rename dependency not found. Please install using 'brew install rename'"; exit 1; }
  
 ###### SCRIPT #######
-for f in "$@"
+for f in ./*.txt;
 do
 # Get the full file PATH without the extension
 filepathWithoutExtension="${f%.*}"
@@ -22,7 +22,7 @@ tr -d '\r\n' < "$f" > test2.txt
 # Remove extra white spaces
 sed -i 's/[[:space:]]\+/ /g' test2.txt
 
-# Remove Brackets around STUDENT and PROFESSOR speaker ids (necessary for proper segmentation; will add back later)
+# Remove Brackets around speaker IDs (student, professor)
 sed -i 's/\[STUDENT\]/STUDENT/g' test2.txt
 sed -i 's/\[PROFESSOR\]/PROFESSOR/g' test2.txt
 
@@ -64,7 +64,7 @@ perl -00 -ple 's/.*\n.*\n/$&\n/mg' test7.txt > "$f"
 rm test7.txt
 
 # Convert audio file (mp4, mkv et al.) to Constant Bit Rate MP3
-ffmpeg -i *.mp4 -ab 128k -f mp3 - >"$f".mp3
+ffmpeg -i *.mp4 -ab 128k -f mp3 - >"$f".mp3 2>&1
 # ffmpeg -i *.mkv -ab 128k -f mp3 - >"$f".mp3
 
 # Rename Non CBR files (so they can be deleted in next step)
@@ -97,5 +97,5 @@ rename 's/.txt.mp3/.mp3/g' *.mp3
 # mpv *.mp3
 
 # Open Finetuneas Page
-open *.html
+## open *.html
 done
