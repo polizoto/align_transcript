@@ -40,16 +40,20 @@ Preliminary:
 
 1. Download or clone segment_transcript repository
 2. Open the terminal (Mac)
-3. CD to the directory with the scripts (Align_Transcript.sh, Segment_Only.sh, Segment+Align.sh, HONORIFICS, sentence-boundary.pl, create_directory.sh, and segment_directory.sh must all be in the same directory)
+3. CD to the directory with the scripts (Align_Transcripts.sh, Segment_Only.sh, Segment+Align.sh, HONORIFICS, sentence-boundary.pl, create_directory.sh, and segment_directory.sh must all be in the same directory)
 4. Make the scripts executable (one-time-only step)
 
-`chmod +x path/to/Align_Transcript.sh`
+`chmod +x path/to/Align_Transcripts.sh`
 
 `chmod +x path/to/Segment_Only.sh`
 
 `chmod +x path/to/Segment+Align.sh` etc.
 
-3. Enter the path to `Align_Transcript.sh` script and press Enter. (a TXT file must at least be present in 'Transcripts' directory)
+5. Place transcripts + audio files (optional) in a folder named "Transcripts".
+
+6. Enter the path to `Align_Transcript.sh` script and press Enter. (a TXT file must at least be present in 'Transcripts' directory)
+
+`./Align_Transcripts`
 
 ## Notes
 - In Segment+Align.sh script, adjust, if necessary, the Aeneas parameters (e.g., head/tail audio length)
