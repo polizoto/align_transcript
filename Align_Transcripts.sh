@@ -20,10 +20,13 @@ for f in ./
 
 do 
 
-if [ -f ./Transcripts/*.txt ]; then
+if ls ./Transcripts/*.txt 1> /dev/null 2>&1; then
 
 	echo -e "\nFound these TXT files in" 'Transcripts' "folder for segmenting/aligning:\n"
+	
 	ls ./Transcripts/*.txt
+	
+	echo -e ""
 	
 else
 	
@@ -105,7 +108,7 @@ if grep -q ".srt.html" ./log.txt; then
 
 fi
 
-if [ -f ../Transcripts/*.mp4 ]; then
+if ls ../Transcripts/*.mp4 1> /dev/null 2>&1; then
 
 echo -e "\nThese mp4 files did not have transcripts for alignment:" >> report.txt
 
