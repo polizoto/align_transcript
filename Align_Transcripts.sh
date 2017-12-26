@@ -6,6 +6,9 @@
 # 408-996-6044
 
 # check dependencies 
+
+set -e
+
 command -v aeneas_execute_task >/dev/null 2>&1 || { echo >&2 "aeneas_execute_task not found please install from https://github.com/readbeyond/aeneas/blob/master/wiki/INSTALL.md)"; exit 1; }
 
 command -v rename >/dev/null 2>&1 || { echo >&2 "rename dependency not found. Please install using 'brew install rename'"; exit 1; }
@@ -16,6 +19,29 @@ exec > >(tee -a ./log.txt) 2>&1
 for f in ./
 
 do 
+
+if [ -f ./Transcripts/*.txt ]; then
+
+	echo -e "\nFound these TXT files in" 'Transcripts' "folder for segmenting/aligning:\n"
+	ls ./Transcripts/*.txt
+	
+else
+	
+	echo -e "\033[31m\nA 'Transcripts' folder doesn't exist or there are no TXT files located in the 'Transcripts' folder.\033[0m\n" >> ./log.txt
+	
+	echo -ne $(cat ./log.txt | sed  's/$/\\n/' | sed 's/ /\\a /g')
+	
+	# Clean Up Color Codes in Report
+	sed -i 's/\x1b\[[0-9;]*[a-zA-Z]//g' log.txt
+	sed -i 's/\\033//g' log.txt
+	sed -i 's/\[32m//g' log.txt
+	sed -i 's/\[33m//g' log.txt
+	sed -i 's/\[0m//g' log.txt
+	
+	mv ./log.txt align_log_$(date +%H%M:%m:%d:%Y).txt
+    
+    exit 1
+fi
 
 # Add Completed directory if missing
 if [ ! -d ./Completed ]; then
@@ -36,15 +62,11 @@ cd ..
 mv ./Transcripts/*/ ./Completed
 
 # Check for transcripts that were segmented only
-if [ -f ./Transcripts/transcript_only.txt ]; then
-   mv ./Transcripts/transcript_only.txt ./Completed
-fi
 
 if [ -f "./Transcripts/segment_only.txt" ]; then
 mv ./Transcripts/segment_only.txt ./Completed
 fi
 
-rm ./Transcripts/Clean_Up_Directory.sh
 rm ./Transcripts/Segment+Align.sh
 rm ./Transcripts/Segment_Only.sh
 rm ./Transcripts/Segment_Directory.sh
@@ -99,7 +121,7 @@ else
 
 echo -e "\nThese mp4 files did not have transcripts for alignment:" >> report.txt
 
-echo -e "\033[32m\nNo mp4 files were missing transcripts for alignment. \033[0m\n" >> report2.txt
+echo -e "\033[32m\nNo mp4 files were missing transcripts for alignment. \033[0m\n" >> report.txt
 
 fi
 
