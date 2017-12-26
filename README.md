@@ -1,5 +1,5 @@
 # align_transcript
-The Align_Transcripts script segments an edited plain text file into "caption-ready" chunks and aligns it with audio, using Aeneas. The result is an SRT file.
+These scripts segment edited plain text files into "caption-ready" chunks and align them with audio files, using Aeneas. The result is an SRT file.
 
 NOTE: If you are just starting a captioning workflow for YouTube videos, we recommend using the YouTube.sh script to download the auto-Captions from YouTube https://github.com/polizoto/auto_captions_dl . That script will download the auto-captions (a "raw" transcript) which you can then edit before running Align_Transcripts.sh.
 
@@ -32,9 +32,9 @@ rename
 
 Preliminary:
 * Include speaker IDs and non-speech sounds in brackets (they will be ignored for alignment)- not necessary when you have PROFESSOR or STUDENT in all caps as speakers ids.
-* The TXT file and the AUDIO file must have the same name. They must also be located in a directory entitled 'Transcripts'.
-* HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting). This file should be in same directory as scripts. 
-* sentence-boundary.pl is a perl script that places all the sentences in a TXT file on their own lines. This file should be in the same directory as the script.
+* The TXT file and the AUDIO file must have the same name. They must also be located in a directory entitled 'Transcripts' that is in the same directory as the scripts. (If a "Transcripts" folder doesn't exist or if there are no TXT files in it, the Align_Transcripts.sh script will abort.
+* HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting). 
+* sentence-boundary.pl is a perl script that places all the sentences in a TXT file on their own lines.
 
 1. Download or clone segment_transcript repository
 2. Open the terminal (Mac)
