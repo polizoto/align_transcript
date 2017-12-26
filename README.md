@@ -53,6 +53,10 @@ Preliminary:
 
 `./Align_Transcripts`
 
+7. The "Completed" folder will contain directories for each transcript that has been segmented or aligned with the audio (an SRT file). Use the HTML file to check the accuracy of the timestamps in the SRT files and adjust if necessary.
+
+N.B. A log file will report the following info: 1) Name of Transcripts for which SRT files were created 2) Audio files that had no corresponding transcript for alignment and 3) Transcripts that had no corresponding audio files for alignment.
+
 ## Notes
 - In Segment+Align.sh script, adjust, if necessary, the Aeneas parameters (e.g., head/tail audio length)
 - These scripts have been designed for use on a Mac. For scripts that will work on a PC, see this repo: https://github.com/polizoto/segment_transcript_pc
