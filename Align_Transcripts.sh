@@ -18,7 +18,13 @@ exec > >(tee -a ./log.txt) 2>&1
 
 for f in ./
 
-do 
+do
+
+if [ ! -d ./Logs ]; then
+
+mkdir Logs
+
+fi
 
 if ls ./Transcripts/*.txt 1> /dev/null 2>&1; then
 
@@ -29,6 +35,8 @@ if ls ./Transcripts/*.txt 1> /dev/null 2>&1; then
 	echo -e ""
 	
 else
+
+	echo -e "\nalign_log for captions files created at "$(date +%H:%M/%m/%d/%Y) | cat - log.txt > temp && mv temp log.txt
 	
 	echo -e "\033[31m\nA 'Transcripts' folder doesn't exist or there are no TXT files located in the 'Transcripts' folder.\033[0m\n" >> ./log.txt
 	
@@ -40,6 +48,13 @@ else
 	sed -i 's/\[32m//g' log.txt
 	sed -i 's/\[33m//g' log.txt
 	sed -i 's/\[0m//g' log.txt
+	
+	mv ./log.txt ./Logs
+	
+	cd ./Logs
+	
+	# remove white space at top of document
+	sed -i '/./,$!d' log.txt
 	
 	mv ./log.txt align_log_$(date +%H%M:%m:%d:%Y).txt
     
@@ -140,7 +155,7 @@ else
 
 echo -e "These transcripts did not have audio files for alignment and were segmented only:" >> report.txt
 
-echo -e "\033[32m\nNo transcripts were missing audio files.\033[0m\n" >> report.txt
+echo -e "\033[32m\nNo transcripts were missing audio files.\033[0m" >> report.txt
 
 fi
 
@@ -168,6 +183,10 @@ sed -i '/./,$!d' report.txt
 mv ./report.txt ../
 
 cd ..
+
+mv ./report.txt ./Logs
+
+cd ./Logs
 
 # Rename Log with date
 mv ./report.txt align_log_$(date +%H%M:%m:%d:%Y).txt
