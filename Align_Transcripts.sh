@@ -105,7 +105,7 @@ if grep -q ".srt.html" ./log.txt; then
 
 fi
 
-if [ "$(ls -A ../Transcripts/*.mp4)" ]; then
+if [ -f ../Transcripts/*.mp4 ]; then
 
 echo -e "\nThese mp4 files did not have transcripts for alignment:" >> report.txt
 
