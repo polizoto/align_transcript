@@ -84,7 +84,9 @@ aeneas_execute_task "$f".mp3 "$f" "task_language=fr|os_task_file_format=srt|is_t
 # Rename path to audio/video file in HTML directory
 
 # sed -ri 's/.txt.mp4/.mp4/' "$f".srt.html
+ sed -ri 's/\/Transcripts\//\/Completed\//' "$f".srt.html
  sed -ri 's/.txt.mp3/.mp3/' "$f".srt.html
+
 
 
 # Rename Files
