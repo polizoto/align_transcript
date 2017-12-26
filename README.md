@@ -32,7 +32,7 @@ rename
 
 Preliminary:
 * Include speaker IDs and non-speech sounds in brackets (they will be ignored for alignment)- not necessary when you have PROFESSOR or STUDENT in all caps as speakers ids.
-* The TXT file and the AUDIO file must have the same name. They must also be located in a directory entitled 'Transcripts' that is in the same directory as the scripts. (If a "Transcripts" folder doesn't exist or if there are no TXT files in it, the Align_Transcripts.sh script will abort.
+* The TXT file and the AUDIO file must have the same name. They must also be located in a directory entitled 'Transcripts' that is in the same directory as the scripts. (If a "Transcripts" folder doesn't exist or if there are no TXT files in it, the Align_Transcripts.sh script will abort.)
 * HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting). 
 * sentence-boundary.pl is a perl script that places all the sentences in a TXT file on their own lines.
 
