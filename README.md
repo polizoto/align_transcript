@@ -34,28 +34,24 @@ rename
 
 Preliminary:
 * Include speaker IDs and non-speech sounds in brackets (they will be ignored for alignment)- not necessary when you have PROFESSOR or STUDENT in all caps as speakers ids.
-* The TXT file and the AUDIO file must have the same name. They must also be located in the same directory.
+* The TXT file and the AUDIO file must have the same name. They must also be located in a directory entitled 'Transcripts'.
 * HONORIFICS is a file containing abbreviations with periods that should not be treated as the end of a sentence (for segmenting). This file should be in same directory as scripts. 
 * sentence-boundary.pl is a perl script that places all the sentences in a TXT file on their own lines. This file should be in the same directory as the script.
 
 1. Download or clone segment_transcript repository
 2. Open the terminal (Mac)
-3. CD to the directory with the scripts (Segment_Only.sh, Segment+Align.sh, HONORIFICS, and sentence-boundary.pl must all be in the same directory)
+3. CD to the directory with the scripts (Align_Transcript.sh, Segment_Only.sh, Segment+Align.sh, HONORIFICS, sentence-boundary.pl, create_directory.sh, and segment_directory.sh must all be in the same directory)
 4. Make the scripts executable (one-time-only step)
+
+`chmod +x path/to/Align_Transcript.sh`
 
 `chmod +x path/to/Segment_Only.sh`
 
-`chmod +x path/to/Segment+Align.sh`
+`chmod +x path/to/Segment+Align.sh` etc.
 
-3. Enter the path to the script and then enter the path to the TXT file:
-
-`path/to/Segment_Only.sh path/to/file`
-
-OR
-
-`path/to/Segment+Align.sh path/to/text_file`
+3. Enter the path to `Align_Transcript.sh` script and press Enter. (a TXT file must at least be present in 'Transcripts' directory)
 
 ## Notes
-- In Segment+Align.sh script, adjust, if necessary, the Aeneas command so that the correct audio file type is listed (Adjust other 'clean-up' commands with different file types as well). In addition, adjust Aeneas parameters as necessary (e.g., head/tail audio length)
+- In Segment+Align.sh script, adjust, if necessary, the Aeneas parameters (e.g., head/tail audio length)
 - These scripts have been designed for use on a Mac. For scripts that will work on a PC, see this repo: https://github.com/polizoto/segment_transcript_pc
 - For more information, please contact jpolizzotto@htctu.net
